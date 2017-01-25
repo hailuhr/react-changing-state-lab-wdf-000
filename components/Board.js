@@ -4,8 +4,13 @@ const Field = require('./Field');
 class Board extends React.Component {
   render () {
     const { board, onClick } = this.props;
+    const fields = board.map((player, i) =>
+
+      <Field key={i} player={player} onClick={onClick.bind(null, i)} />
+        )
     return (
-      <div>
+      <div className="board">
+        { fields }
       </div>
     );
   }
